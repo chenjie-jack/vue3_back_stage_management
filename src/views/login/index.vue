@@ -47,7 +47,7 @@ const loading = ref(false);
 //收集账号和密码的数据
 let loginForm = reactive({
   username: "admin",
-  password: "111111",
+  password: "atguigu123",
 });
 //登录按钮的回调
 const login = async () => {
@@ -58,7 +58,7 @@ const login = async () => {
     //登录成功
     await useStore.userLogin(loginForm);
     //编程式导航
-    const redirect:any = $route.query.redirect
+    const redirect: any = $route.query.redirect
     $router.push({ path: redirect || '/' });
     ElNotification({
       type: "success",
@@ -83,8 +83,7 @@ const validatorUserName = (rule: any, value: any, callback: any) => {
   //value:表单元素文本内容
   //callback:如果符合条件callback放行 不符合条件callback方法，注入错误提示信息
   ///^\d{5,10}$/.test(value) 正则表达式
-  console.log(rule);
-  if (value.length >= 5) {
+  if (value.length >= 5 && rule.required) {
     callback();
   } else {
     callback(new Error("账号长度至少五位"));
@@ -92,8 +91,7 @@ const validatorUserName = (rule: any, value: any, callback: any) => {
 };
 
 const validatorPassword = (rule: any, value: any, callback: any) => {
-  console.log(rule);
-  if (value.length >= 5) {
+  if (value.length >= 5 && rule.required) {
     callback();
   } else {
     callback(new Error("密码长度至少六位"));
@@ -103,11 +101,11 @@ const validatorPassword = (rule: any, value: any, callback: any) => {
 const rules = {
   username: [
     // { required: true, min: 5, max: 10, message: '账号的长度为6-10位', trigger: 'change' }
-    { trigger: "change", validator: validatorUserName },
+    { trigger: "change", validator: validatorUserName, required: true },
   ],
   password: [
     // { required: true, min: 6, max: 15, message: '密码的长度至少6位', trigger: 'change' }
-    { trigger: "change", validator: validatorPassword },
+    { trigger: "change", validator: validatorPassword,required:true },
   ],
 };
 </script>

@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter,useRoute } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 //获取骨架的小仓库
 import useLayoutSettingStore from '@/store/modules/setting';
 //获取用户相关的小仓库
@@ -46,13 +46,12 @@ const fullScreen = () => {
     }
 }
 //退出登录点击回调
-const logout = () => {
+const logout = async () => {
     //第一：需要向服务器请求【退出登录接口】
     //第二：仓库当中关于用户相关的数据清空
     //第三：跳转到登录页面
-    userStore.userLogout()
-    $router.push({path:'/login',query:{redirect:$route.path}})
-
+    await userStore.userLogout()
+    $router.push({ path: '/login', query: { redirect: $route.path } })
 }
 
 </script>
