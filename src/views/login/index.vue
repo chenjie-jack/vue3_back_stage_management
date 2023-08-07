@@ -4,17 +4,37 @@
       <el-col :span="12" :xs="0"></el-col>
       <el-col :span="12" :xs="24">
         <!-- 登录的表单 -->
-        <el-form class="login_form" :model="loginForm" :rules="rules" ref="loginForms">
+        <el-form
+          class="login_form"
+          :model="loginForm"
+          :rules="rules"
+          ref="loginForms"
+        >
           <h1>Hello</h1>
           <h2>欢迎来到硅谷甄选</h2>
           <el-form-item prop="username">
-            <el-input v-model="loginForm.username" :prefix-icon="User"></el-input>
+            <el-input
+              v-model="loginForm.username"
+              :prefix-icon="User"
+            ></el-input>
           </el-form-item>
           <el-form-item prop="password">
-            <el-input type="password" v-model="loginForm.password" :prefix-icon="Lock" show-password></el-input>
+            <el-input
+              type="password"
+              v-model="loginForm.password"
+              :prefix-icon="Lock"
+              show-password
+            ></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button :loading="loading" class="login_btn" type="primary" size="default" @click="login">登录</el-button>
+            <el-button
+              :loading="loading"
+              class="login_btn"
+              type="primary"
+              size="default"
+              @click="login"
+              >登录</el-button
+            >
           </el-form-item>
         </el-form>
       </el-col>
@@ -39,7 +59,7 @@ const loginForms = ref();
 
 //获取路由器
 const $router = useRouter();
-const $route = useRoute()
+const $route = useRoute();
 
 //定义一个变量，控制按钮加载的效果
 const loading = ref(false);
@@ -58,8 +78,8 @@ const login = async () => {
     //登录成功
     await useStore.userLogin(loginForm);
     //编程式导航
-    const redirect: any = $route.query.redirect
-    $router.push({ path: redirect || '/' });
+    const redirect: any = $route.query.redirect;
+    $router.push({ path: redirect || "/" });
     ElNotification({
       type: "success",
       message: "欢迎回来",
@@ -105,14 +125,14 @@ const rules = {
   ],
   password: [
     // { required: true, min: 6, max: 15, message: '密码的长度至少6位', trigger: 'change' }
-    { trigger: "change", validator: validatorPassword,required:true },
+    { trigger: "change", validator: validatorPassword, required: true },
   ],
 };
 </script>
 <script lang="ts">
 export default {
-  name: 'Login'
-}
+  name: "Login",
+};
 </script>
 
 <style scoped lang="scss">

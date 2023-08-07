@@ -2,7 +2,7 @@
 import axios from "axios";
 import { ElMessage } from "element-plus";
 //引入用户相关的仓库
-import useUserStore from '@/store/modules/user'
+import useUserStore from "@/store/modules/user";
 //第一步：利用axios对象的create方法，去创建axios实例(其他配置：基础路径、超时的时间)
 const request = axios.create({
   //基础路径
@@ -15,7 +15,7 @@ request.interceptors.request.use((config) => {
   //获取挺好的小仓库：目的是获取仓库内部的token,登录成功后以后携带给服务器
   const userStore = useUserStore();
   if (userStore.token) {
-    config.headers.token = userStore.token
+    config.headers.token = userStore.token;
   }
 
   //返回配置对象

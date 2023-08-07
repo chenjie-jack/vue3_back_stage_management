@@ -29,8 +29,8 @@ defineProps({
 </script>
 <script lang="ts">
 export default {
-    name: 'GlobalSvgIcon'
-}
+  name: "GlobalSvgIcon",
+};
 </script>
 
 <style scoped></style>
