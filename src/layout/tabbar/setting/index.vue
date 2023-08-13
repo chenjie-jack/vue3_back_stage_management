@@ -4,14 +4,16 @@
     icon="Refresh"
     circle
     @click="updateRefresh"
+    title="刷新"
   ></el-button>
   <el-button
     size="small"
     icon="FullScreen"
     circle
     @click="fullScreen"
+    title="全屏"
   ></el-button>
-  <el-button size="small" icon="Setting" circle></el-button>
+  <el-button size="small" icon="Setting" circle title="设置"></el-button>
   <img
     :src="userStore.avatar"
     style="width: 24px; height: 24px; margin: 0 10px; border-radius: 50%"
