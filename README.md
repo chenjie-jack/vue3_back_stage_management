@@ -1433,4 +1433,5 @@ C:\Users\32325\Desktop\learn-vue\learn_vue3\vue3_admin_template\src\layout\index
             <el-menu-item index="2-2">角色管理</el-menu-item>
             <el-menu-item index="2-3">菜单管理</el-menu-item>
           </el-sub-menu> -->
+
 ### SPU:电商术语，代表的是一个标准化产品单元
