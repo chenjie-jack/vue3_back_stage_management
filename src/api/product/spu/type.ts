@@ -118,6 +118,6 @@ export interface SkuData {
 }
 
 //获取sku数据接口的ts类型
-export interface SkuInfoData extends ResponseData{
-  data:SkuData[]
+export interface SkuInfoData extends ResponseData {
+  data: SkuData[];
 }

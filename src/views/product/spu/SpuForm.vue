@@ -226,8 +226,7 @@ const handlePictureCardPreview = (file: any) => {
   dialogVisible.value = true;
 };
 //照片强删除文件钩子
-const handleRemove = () => {
-};
+const handleRemove = () => {};
 //照片墙上传成功之前钩子(约束文件的大小与类型)
 const handlerUpload = (file: any) => {
   if (
