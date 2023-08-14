@@ -105,14 +105,19 @@ export interface SaleAttr {
 }
 //sku对应的ts类型
 export interface SkuData {
-  category3Id: string | number;
-  spuId: string | number;
-  tmId: string | number;
-  skuName: string;
-  price: string | number;
-  weight: string | number;
-  skuDesc: string;
+  category3Id?: string | number;
+  spuId?: string | number;
+  tmId?: string | number;
+  skuName?: string;
+  price?: string | number;
+  weight?: string | number;
+  skuDesc?: string;
   skuAttrValueList?: Attr[];
   skuSaleAttrValueList?: SaleAttr[];
-  skuDefaultImg: string;
+  skuDefaultImg?: string;
+}
+
+//获取sku数据接口的ts类型
+export interface SkuInfoData extends ResponseData{
+  data:SkuData[]
 }

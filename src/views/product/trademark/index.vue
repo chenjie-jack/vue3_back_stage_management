@@ -183,7 +183,6 @@ const sizeChange = () => {
   //当前每页的的数据量发生变化的时候，当前页面归1
   pageNo.value = 1;
   getHasTrademark();
-  console.log(666);
 };
 //添加品牌的回调
 const addTrademark = () => {

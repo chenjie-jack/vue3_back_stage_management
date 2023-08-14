@@ -227,7 +227,6 @@ const handlePictureCardPreview = (file: any) => {
 };
 //照片强删除文件钩子
 const handleRemove = () => {
-  console.log(123);
 };
 //照片墙上传成功之前钩子(约束文件的大小与类型)
 const handlerUpload = (file: any) => {
@@ -268,7 +267,7 @@ const addSaleAttr = () => {
   const [baseSaleAttrId, saleAttrName] =
     saleAttrIdAndValueName.value.split(":");
   //准备一个新的的销售属性对象，将来带给服务器即可
-  let newSaleAttr: SaleAttr = {
+  let newSaleAttr: any = {
     baseSaleAttrId,
     saleAttrName,
     spuSaleAttrValueList: [],
