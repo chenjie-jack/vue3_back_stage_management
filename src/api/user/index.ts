@@ -17,7 +17,7 @@
 // };
 //#endregion
 
-//真实的接口
+//真实的接口 用户登录的相关接口
 import request from "@/utils/request"; //统一管理项目中用户相关的接口
 import type {
   LoginFormData,
