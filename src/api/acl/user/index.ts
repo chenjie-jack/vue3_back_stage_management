@@ -24,7 +24,9 @@ enum API {
 }
 //获取用户账号信息的接口
 export const reqUserInfo = (page: number, limit: number, username: string) =>
-  request.get<any, UserResponseData>(API.ALLUSER_URL + `${page}/${limit}/?username=${username}`);
+  request.get<any, UserResponseData>(
+    API.ALLUSER_URL + `${page}/${limit}/?username=${username}`,
+  );
 //添加与更新已有用户的接口
 export const reqAddOrUpdateUser = (data: any) => {
   //携带的参数有id就是更新，没有就是新增

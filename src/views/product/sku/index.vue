@@ -6,8 +6,8 @@
       <el-table-column label="描述" show-overflow-tooltip prop="skuDesc"></el-table-column>
       <el-table-column label="默认图片">
         <template #default="{ row }">
-          <el-image :src="row.skuDefaultImg" :alt="row.skuName" style="width: 100px; height: 100px;cursor: pointer;"
-            fit="cover"  :preview-src-list="imgUrlArr" />
+          <el-image :src="row.skuDefaultImg" :alt="row.skuName" style="width: 100px; height: 100px; cursor: pointer"
+            fit="cover" />
         </template>
       </el-table-column>
       <el-table-column label="重量" prop="weight"></el-table-column>
@@ -164,10 +164,6 @@ const removeSku = async (id: number) => {
   }
 };
 
-let skuImages=ref<string[]>()
-const extractSkuDefaultImages=()=>{
-  
-}
 </script>
 <script lang="ts">
 export default {

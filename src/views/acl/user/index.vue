@@ -113,7 +113,7 @@ import type {
   AllRole,
   SetRoleData,
 } from "@/api/acl/user/type";
-import useLayoutSettingStore from '@/store/modules/setting'
+import useLayoutSettingStore from "@/store/modules/setting";
 import { ElMessage } from "element-plus";
 //默认的页码
 let pageNo = ref<number>(1);
@@ -134,7 +134,7 @@ let userRole = ref<AllRole>([]);
 //获取抽屉组件from组件实例
 let formRef = ref<any>();
 //定义响应式数据，收集用户输入进来的关键字
-let keyword = ref<string>('')
+let keyword = ref<string>("");
 //收集用户信息的响应式数据
 let userParams = reactive<User>({
   username: "",
@@ -144,7 +144,7 @@ let userParams = reactive<User>({
 //准备一个数组存储批量删除的用户的ID
 let selectIdArr = ref<User[]>([]);
 //获取setting仓库
-let settingStore = useLayoutSettingStore()
+let settingStore = useLayoutSettingStore();
 const getHasUser = async (pager: number = 1) => {
   //收集当前的页码
   pageNo.value = pager;
@@ -323,14 +323,14 @@ const deleteSelect = async () => {
 //搜索按钮的回调
 const search = () => {
   //根据关键字获取相应的用户数据
-  getHasUser()
+  getHasUser();
   //清空关键字
-  keyword.value = ''
-}
+  keyword.value = "";
+};
 //重装按钮
 let reset = () => {
-  settingStore.refresh = !settingStore.refresh
-}
+  settingStore.refresh = !settingStore.refresh;
+};
 </script>
 <script lang="ts">
 export default {
