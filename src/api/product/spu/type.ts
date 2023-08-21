@@ -97,7 +97,7 @@ export interface HasSaleAttrResponseData extends ResponseData {
 
 export interface Attr {
   attrId: number | string;
-  valueId: numbe | string;
+  valueId: number | string;
 }
 export interface SaleAttr {
   saleAttrId: number | string;

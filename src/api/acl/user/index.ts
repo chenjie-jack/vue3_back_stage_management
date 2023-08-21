@@ -33,7 +33,7 @@ export const reqAddOrUpdateUser = (data: any) => {
   if (data.id) {
     return request.put<any, any>(API.UPDATEUSER_URL, data);
   } else {
-    return request.post<any.any>(API.ADDUSER_URL, data);
+    return request.post<any, any>(API.ADDUSER_URL, data);
   }
 };
 //获取全部职位以及当前用户账号拥有的职位接口方法
@@ -47,4 +47,4 @@ export const reqRemoveUser = (userId: number) =>
   request.delete<any, any>(API.DELETEUSER_URL + userId);
 //批量删除账号的接口
 export const reqBatchRemoveUser = (idList: number[]) =>
-  request.delete(API.DELETEALLUSER_URL, { data: idList });
+  request.delete<any, any>(API.DELETEALLUSER_URL, { data: idList });

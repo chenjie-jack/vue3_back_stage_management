@@ -6,7 +6,7 @@ export interface ResponseData {
 //定义sku对象的ts类型
 export interface Attr {
   attrId: number | string;
-  valueId: numbe | string;
+  valueId: number | string;
   id?: number;
   valueName?: string;
 }

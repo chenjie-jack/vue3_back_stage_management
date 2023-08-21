@@ -22,7 +22,7 @@ export const reqSaleSku = (skuId: number) =>
   request.get<any, any>(API.SALE_URL + skuId);
 //下架的请求
 export const reqCancelSale = (skuId: number) =>
-  request.get<any.any>(API.CANCELSALE_URL + skuId);
+  request.get<any, any>(API.CANCELSALE_URL + skuId);
 //获取商品详情的接口
 export const reqSkuInfo = (skuId: number) =>
   request.get<any, SkuInfoData>(API.SKUINFO_URL + skuId);

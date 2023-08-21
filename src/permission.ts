@@ -13,6 +13,7 @@ const userStore = useUserStore(pinia);
 
 //全局前置守卫
 router.beforeEach(async (to: any, from: any, next: any) => {
+  // console.log(from)
   document.title = `${setting.title} - ${to.meta.title}`;
   nprogress.start();
   const token = userStore.token;
@@ -48,5 +49,6 @@ router.beforeEach(async (to: any, from: any, next: any) => {
 
 //全局后置守卫
 router.afterEach((to, from) => {
+  // console.log(to,from )
   nprogress.done();
 });

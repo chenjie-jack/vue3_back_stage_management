@@ -19,17 +19,17 @@ enum API {
 export const reqC1 = () => request.get<any, CategoryResponseData>(API.C1_URL);
 //获取二级分类是接口方法
 export const reqC2 = (category1Id: number | string) =>
-  request.get<any, CategoryResponseData>(API.C2_URL + `${category1Id}`);
+  request.get<any,CategoryResponseData>(API.C2_URL + `${category1Id}`);
 //获取三级分类的接口方法
 export const reqC3 = (category2Id: number) =>
-  request.get<any, CategoryResponseData>(API.C3_URL + `${category2Id}`);
+  request.get<any,CategoryResponseData>(API.C3_URL + `${category2Id}`);
 //获取对应分类下的已有的属性和属性值的接口方法
 export const reqAttr = (
   category1Id: string | number,
   category2Id: string | number,
   category3Id: string | number,
 ) =>
-  request.get<any, AttrResponseData>(
+  request.get<any,AttrResponseData>(
     API.ATTR_URL + `${category1Id}/${category2Id}/${category3Id}`,
   );
 //新增属性或者修改已有属性的接口方法

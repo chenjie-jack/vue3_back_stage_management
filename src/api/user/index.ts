@@ -32,9 +32,9 @@ enum API {
 }
 //登录接口
 export const reqLogin = (data: LoginFormData) =>
-  request.post<any, LoginResponseData>(API.LOGIN_URL, data);
+  request.post<any,LoginResponseData>(API.LOGIN_URL, data);
 //获取用户信息的接口
 export const reqUserInfo = () =>
-  request.get<any, UserInfoResponseData>(API.USERINFO_URL);
+  request.get<any,UserInfoResponseData>(API.USERINFO_URL);
 //退出登录
-export const reqLogout = () => request.post<any, any>(API.LOGOUT_URL);
+export const reqLogout = () => request.post<any,any>(API.LOGOUT_URL);
