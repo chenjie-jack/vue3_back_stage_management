@@ -55,7 +55,7 @@ request.interceptors.response.use(
     //提示错误信息
     ElMessage({
       type: "error",
-      message:message,
+      message: message,
     });
     return Promise.reject(error);
   },
