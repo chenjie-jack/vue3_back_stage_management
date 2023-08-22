@@ -4,40 +4,98 @@
     <Category :scene="scene"></Category>
     <el-card style="margin: 10px 0">
       <div v-show="scene == 0">
-        <el-button type="primary" size="default" icon="Plus" :disabled="categoryStore.c3Id ? false : true"
-          @click="addSpu">添加SPU</el-button>
-        <el-button mb-2 @click="toggle" type="primary">Switch Language</el-button>
+        <el-button
+          type="primary"
+          size="default"
+          icon="Plus"
+          :disabled="categoryStore.c3Id ? false : true"
+          @click="addSpu"
+          >添加SPU</el-button
+        >
+        <el-button mb-2 @click="toggle" type="primary"
+          >Switch Language</el-button
+        >
         <!-- 展示已有的SPU数据 -->
         <el-config-provider :locale="locale">
           <el-table style="margin: 10px 0" border :data="records">
-            <el-table-column label="序号" type="index" align="center" width="80px"></el-table-column>
+            <el-table-column
+              label="序号"
+              type="index"
+              align="center"
+              width="80px"
+            ></el-table-column>
             <el-table-column label="SPU名称" prop="spuName"></el-table-column>
-            <el-table-column label="SPU描述" prop="description" show-overflow-tooltip></el-table-column>
+            <el-table-column
+              label="SPU描述"
+              prop="description"
+              show-overflow-tooltip
+            ></el-table-column>
             <el-table-column label="SPU操作">
               <!-- row为已有的SPU对象 -->
               <template #default="{ row }">
-                <el-button type="primary" size="small" icon="Plus" title="添加SKU" @click="addSku(row)"></el-button>
-                <el-button type="primary" size="small" icon="Edit" title="修改SPU" @click="updateSpu(row)"></el-button>
-                <el-button type="primary" size="small" icon="View" title="查看SKU列表" @click="findSku(row)"></el-button>
-                <el-popconfirm :title="`你确定删除${row.spuName}?`" width="200px" @confirm="deleteSpu(row)">
+                <el-button
+                  type="primary"
+                  size="small"
+                  icon="Plus"
+                  title="添加SKU"
+                  @click="addSku(row)"
+                ></el-button>
+                <el-button
+                  type="primary"
+                  size="small"
+                  icon="Edit"
+                  title="修改SPU"
+                  @click="updateSpu(row)"
+                ></el-button>
+                <el-button
+                  type="primary"
+                  size="small"
+                  icon="View"
+                  title="查看SKU列表"
+                  @click="findSku(row)"
+                ></el-button>
+                <el-popconfirm
+                  :title="`你确定删除${row.spuName}?`"
+                  width="200px"
+                  @confirm="deleteSpu(row)"
+                >
                   <template #reference>
-                    <el-button type="primary" size="small" icon="Delete" title="删除SKU"></el-button>
+                    <el-button
+                      type="primary"
+                      size="small"
+                      icon="Delete"
+                      title="删除SKU"
+                    ></el-button>
                   </template>
                 </el-popconfirm>
               </template>
             </el-table-column>
           </el-table>
           <!-- 分页器 -->
-          <el-pagination v-model:current-page="pageNo" v-model:page-size="pageSize" :page-sizes="[3, 5, 7, 9]"
-            :background="true" layout="prev, pager, next, jumper,->,sizes,total" :total="total"
-            @current-change="getHasSpu" @size-change="changeSize" />
+          <el-pagination
+            v-model:current-page="pageNo"
+            v-model:page-size="pageSize"
+            :page-sizes="[3, 5, 7, 9]"
+            :background="true"
+            layout="prev, pager, next, jumper,->,sizes,total"
+            :total="total"
+            @current-change="getHasSpu"
+            @size-change="changeSize"
+          />
         </el-config-provider>
-
       </div>
       <!-- 添加spu以及修改spu的子组件 -->
-      <SpuForm ref="spuForm" v-show="scene == 1" @changeScene="changeScene"></SpuForm>
+      <SpuForm
+        ref="spuForm"
+        v-show="scene == 1"
+        @changeScene="changeScene"
+      ></SpuForm>
       <!-- 添加sku的子组件 -->
-      <SkuForm ref="skuForm" v-show="scene == 2" @changeScene="changeScene"></SkuForm>
+      <SkuForm
+        ref="skuForm"
+        v-show="scene == 2"
+        @changeScene="changeScene"
+      ></SkuForm>
       <!-- dialog对话框：展示已有的sku数据 -->
       <el-dialog v-model="show" title="SKU列表">
         <el-table border :data="skuArr">
@@ -46,7 +104,11 @@
           <el-table-column label="SKU重量" prop="weight"></el-table-column>
           <el-table-column label="SKU图片" prop="weight">
             <template #default="{ row }">
-              <img :src="row.skuDefaultImg" :alt="row.skuName" style="width: 100px; height: 100px" />
+              <img
+                :src="row.skuDefaultImg"
+                :alt="row.skuName"
+                style="width: 100px; height: 100px"
+              />
             </template>
           </el-table-column>
         </el-table>
@@ -63,8 +125,8 @@ import type {
   SkuData,
 } from "@/api/product/spu/type";
 import { ref, watch, onBeforeUnmount, computed } from "vue";
-import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
-import en from 'element-plus/dist/locale/en.mjs'
+import zhCn from "element-plus/dist/locale/zh-cn.mjs";
+import en from "element-plus/dist/locale/en.mjs";
 import { reqHasSpu, reqSkuList, reqRemoveSpu } from "@/api/product/spu";
 import type { SpuData } from "@/api/product/spu/type";
 import { ElMessage } from "element-plus";
@@ -178,12 +240,12 @@ const deleteSpu = async (row: SpuData) => {
     });
   }
 };
-const language = ref('zh-cn')
-const locale = computed(() => (language.value === 'zh-cn' ? zhCn : en))
+const language = ref("zh-cn");
+const locale = computed(() => (language.value === "zh-cn" ? zhCn : en));
 //切换语言的按钮回调
 const toggle = () => {
-  language.value = language.value === 'zh-cn' ? 'en' : 'zh-cn'
-}
+  language.value = language.value === "zh-cn" ? "en" : "zh-cn";
+};
 //路由组件销毁的时候，清空仓库的数据
 onBeforeUnmount(() => {
   categoryStore.$reset();

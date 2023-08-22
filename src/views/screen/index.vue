@@ -20,31 +20,30 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from "vue";
 //引入顶部的子组件
-import Top from './components/Top/index.vue'
+import Top from "./components/Top/index.vue";
 //引入左侧三个子组件
-import Tourist from './components/Tourist/index.vue'
-import Sex from './components/Sex/index.vue'
-import Age from './components/Age/index.vue'
+import Tourist from "./components/Tourist/index.vue";
+import Sex from "./components/Sex/index.vue";
+import Age from "./components/Age/index.vue";
 
 //获取数据大屏展示内容盒子的DOM元素
-let screen = ref<any>()
+let screen = ref<any>();
 onMounted(() => {
-  console.log(screen.value)
-  screen.value.style.transform = `scale(${getScale()}) translate(-50%,-50%)`
-})
+  console.log(screen.value);
+  screen.value.style.transform = `scale(${getScale()}) translate(-50%,-50%)`;
+});
 //定义大屏的缩放发比例
 const getScale = (w: number = 1920, h: number = 1080) => {
-  const ww = window.innerWidth / w
-  const wh = window.innerHeight / h
-  return ww < wh ? ww : wh
-}
+  const ww = window.innerWidth / w;
+  const wh = window.innerHeight / h;
+  return ww < wh ? ww : wh;
+};
 //监听视口的变化
 window.onreset = () => {
-  screen.value.style.transform = `scale(${getScale()}) translate(-50%,-50%)`
-}
-
+  screen.value.style.transform = `scale(${getScale()}) translate(-50%,-50%)`;
+};
 </script>
 <script lang="ts">
 export default {
@@ -77,7 +76,6 @@ export default {
 
       .right {
         flex: 1;
-
       }
 
       .left {
@@ -105,4 +103,5 @@ export default {
       }
     }
   }
-}</style>
+}
+</style>

@@ -1435,6 +1435,9 @@ C:\Users\32325\Desktop\learn-vue\learn_vue3\vue3_admin_template\src\layout\index
           </el-sub-menu> -->
 
 ### SPU:电商术语，代表的是一个标准化产品单元
+
 # 开发这遇到的问题：
+
 1.控制台报错：Not allowed to load local resource: blob:http://localhost:5173/0625fd6e-6874-482c-b726-5289ed34985d
+
 ## 答：Chrome浏览器出于安全方面的考虑，禁止网页访问本地文件。本人遇到的问题：使用img标签将本地磁盘的文件展示在页面。

@@ -1,7 +1,7 @@
 <template>
   <el-card>
     <div class="card">
-      <img :src="userStore.avatar" alt="" class="avatar">
+      <img :src="userStore.avatar" alt="" class="avatar" />
       <div class="bottom">
         <h3 class="hello">{{ hello }}</h3>
         <p class="subtitle">硅谷甄选运营平台</p>
@@ -14,15 +14,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 //引入用户相关的仓库。获取用户的头像和信息
-import useUserStore from '@/store/modules/user';
-import { getTime } from '@/utils/time';
+import useUserStore from "@/store/modules/user";
+import { getTime } from "@/utils/time";
 
 //获取存储用户新的的仓库对象
-let userStore = useUserStore()
+let userStore = useUserStore();
 //首页的hello提示
-let hello = ref<string>(`${getTime()}好,${userStore.username}`)
+let hello = ref<string>(`${getTime()}好,${userStore.username}`);
 </script>
 <script lang="ts">
 export default {
@@ -54,9 +54,8 @@ export default {
     font-style: italic;
     color: skyblue;
   }
-
 }
-.background-image{
+.background-image {
   display: flex;
   justify-content: center;
   margin-top: 10px;

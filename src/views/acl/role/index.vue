@@ -2,10 +2,19 @@
   <el-card>
     <el-form :inline="true" class="form">
       <el-form-item label="职位搜索">
-        <el-input placeholder="请你输入搜索的职位关键字" v-model="keyword"></el-input>
+        <el-input
+          placeholder="请你输入搜索的职位关键字"
+          v-model="keyword"
+        ></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" size="default" :disabled="keyword ? false : true" @click="search">搜索</el-button>
+        <el-button
+          type="primary"
+          size="default"
+          :disabled="keyword ? false : true"
+          @click="search"
+          >搜索</el-button
+        >
         <el-button type="primary" size="default" @click="reset">重置</el-button>
       </el-form-item>
     </el-form>
@@ -15,31 +24,77 @@
     <el-table border style="margin: 10px 0px" :data="allRole">
       <el-table-column type="index" align="center" label="#"></el-table-column>
       <el-table-column label="ID" align="center" prop="id"></el-table-column>
-      <el-table-column label="职位名称" align="center" show-overflow-tooltip prop="roleName"></el-table-column>
-      <el-table-column label="创建时间" align="center" show-overflow-tooltip prop="createTime"></el-table-column>
-      <el-table-column label="更新时间" align="center" show-overflow-tooltip prop="updateTime"></el-table-column>
+      <el-table-column
+        label="职位名称"
+        align="center"
+        show-overflow-tooltip
+        prop="roleName"
+      ></el-table-column>
+      <el-table-column
+        label="创建时间"
+        align="center"
+        show-overflow-tooltip
+        prop="createTime"
+      ></el-table-column>
+      <el-table-column
+        label="更新时间"
+        align="center"
+        show-overflow-tooltip
+        prop="updateTime"
+      ></el-table-column>
       <el-table-column label="操作" width="280px" align="center">
         <template #default="{ row }">
           <!-- row:代表一个职位对象 -->
-          <el-button size="small" type="primary" icon="User" @click="setPermission(row)">分配权限</el-button>
-          <el-button size="small" type="primary" icon="Edit" @click="editRole(row)">编辑</el-button>
-          <el-popconfirm :title="`你确定删除${row.roleName}?`" width="260px" @confirm="deleteRole(row.id)">
+          <el-button
+            size="small"
+            type="primary"
+            icon="User"
+            @click="setPermission(row)"
+            >分配权限</el-button
+          >
+          <el-button
+            size="small"
+            type="primary"
+            icon="Edit"
+            @click="editRole(row)"
+            >编辑</el-button
+          >
+          <el-popconfirm
+            :title="`你确定删除${row.roleName}?`"
+            width="260px"
+            @confirm="deleteRole(row.id)"
+          >
             <template #reference>
-              <el-button size="small" type="primary" icon="Delete">删除</el-button>
+              <el-button size="small" type="primary" icon="Delete"
+                >删除</el-button
+              >
             </template>
           </el-popconfirm>
         </template>
       </el-table-column>
     </el-table>
-    <el-pagination v-model:current-page="pageNo" v-model:page-size="pageSize" :page-sizes="[10, 20, 30, 40]"
-      :background="true" layout="prev, pager, next, jumper,->,sizes,total" :total="total" @current-change="getHasRole"
-      @size-change="sizeChange" />
+    <el-pagination
+      v-model:current-page="pageNo"
+      v-model:page-size="pageSize"
+      :page-sizes="[10, 20, 30, 40]"
+      :background="true"
+      layout="prev, pager, next, jumper,->,sizes,total"
+      :total="total"
+      @current-change="getHasRole"
+      @size-change="sizeChange"
+    />
   </el-card>
   <!-- 添加职位与更新已有职位的结构：对话框 -->
-  <el-dialog v-model="dialogVisite" :title="roleParams.id ? '更新职位' : '添加职位'">
+  <el-dialog
+    v-model="dialogVisite"
+    :title="roleParams.id ? '更新职位' : '添加职位'"
+  >
     <el-form :model="roleParams" :rules="rules" ref="form">
       <el-form-item label="职位名称" prop="roleName">
-        <el-input placeholder="请输入职位名称" v-model="roleParams.roleName"></el-input>
+        <el-input
+          placeholder="请输入职位名称"
+          v-model="roleParams.roleName"
+        ></el-input>
       </el-form-item>
     </el-form>
     <template #footer>
@@ -56,8 +111,15 @@
     </template>
     <template #default>
       <!-- 树形控件 -->
-      <el-tree ref="tree" :data="menuArr" show-checkbox node-key="id" default-expand-all
-        :default-checked-keys="selectArray" :props="{ children: 'children', label: 'name' }" />
+      <el-tree
+        ref="tree"
+        :data="menuArr"
+        show-checkbox
+        node-key="id"
+        default-expand-all
+        :default-checked-keys="selectArray"
+        :props="{ children: 'children', label: 'name' }"
+      />
     </template>
     <template #footer>
       <div style="flex: auto">

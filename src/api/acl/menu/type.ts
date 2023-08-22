@@ -26,10 +26,10 @@ export interface PermissionResponseData extends ResponseData {
 }
 
 //添加与修改菜单携带的参数类型
-export interface MenuParams{
-  code:string,
-  id?:number,
-  level:number,
-  name:string,//菜单名字
-  pid:number,//已有菜单的id
+export interface MenuParams {
+  code: string;
+  id?: number;
+  level: number;
+  name: string; //菜单名字
+  pid: number; //已有菜单的id
 }
