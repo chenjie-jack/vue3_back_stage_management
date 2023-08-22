@@ -24,6 +24,8 @@ import globalComponent from "@/components/index";
 
 //配置element-plus国际化配置 中文
 import zhCn from "element-plus/dist/locale/zh-cn.mjs";
+//暗黑模式需要下css
+import 'element-plus/theme-chalk/dark/css-vars.css'
 
 //引入路由进行注册
 import router from "./router/index";

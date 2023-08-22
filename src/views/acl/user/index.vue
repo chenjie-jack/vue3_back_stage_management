@@ -307,17 +307,17 @@ const cancel = () => {
 };
 //检验用户名的回调函数
 const validatorUsername = (rule: any, value: any, callback: any) => {
-  if (value.trim().length >= 5 && rule.required) {
+  if (value.trim().length >= 2 && rule.required) {
     callback();
   } else {
-    callback(new Error("用户名长度至少为5位"));
+    callback(new Error("用户名长度至少为2位"));
   }
 };
 const validatorName = (rule: any, value: any, callback: any) => {
-  if (value.trim().length >= 5 && rule.required) {
+  if (value.trim().length >= 2 && rule.required) {
     callback();
   } else {
-    callback(new Error("昵称长度至少5位"));
+    callback(new Error("昵称长度至少2位"));
   }
 };
 const validatorPassword = (rule: any, value: any, callback: any) => {

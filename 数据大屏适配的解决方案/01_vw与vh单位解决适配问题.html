@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_vw与vh单位解决适配问题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 100vw;
+            height: 100vh;
+            background-color: orange;
+        }
+
+        .top {
+            width: 5.2vw;
+            height: 9.26vh;
+            background-color: red;
+        }
+
+        .bottom {
+            width: 5.2vw;
+            height: 9.26vh;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+</body>
+
+</html>
+<script>
+// vw和vh:新增单位 -》兼容到IE8
+//width:1920px height:1080px
+</script>
