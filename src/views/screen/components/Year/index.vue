@@ -18,46 +18,46 @@ onMounted(() => {
   let myCharts = echarts.init(charts.value);
   myCharts.setOption({
     title: {
-      text: '散点图',
-      left: '40%',
+      text: "散点图",
+      left: "40%",
       textStyle: {
-        color: 'white'
-      }
+        color: "white",
+      },
     },
     xAxis: {
-      type: 'category', //均匀分布
-      show: true
+      type: "category", //均匀分布
+      show: true,
     },
     yAxis: {
-      show: false
+      show: false,
     },
     grid: {
       left: 20,
       top: 20,
       right: 0,
-      bottom: 20
+      bottom: 20,
     },
     series: {
-      type: 'scatter',
-      data: [33, 88, 21, 9, 788, 234, 133, 234, 555, 333, 55, 67, 324, 543, 212],
+      type: "scatter",
+      data: [
+        33, 88, 21, 9, 788, 234, 133, 234, 555, 333, 55, 67, 324, 543, 212,
+      ],
       //标记的图形设置
-      symbol: 'diamond',
+      symbol: "diamond",
       symbolSize: 16,
       //图文标签
       label: {
         show: true,
-        position: 'top',
-        color: 'red'
+        position: "top",
+        color: "red",
       },
       //散点图标记颜色
-      itemStyle:{
-        color:'cyan'
-      }
-    }
-
+      itemStyle: {
+        color: "cyan",
+      },
+    },
   });
 });
-
 </script>
 <script lang="ts">
 export default {
@@ -83,7 +83,5 @@ export default {
   .charts {
     height: calc(100% - 30px);
   }
-
 }
 </style>
-

@@ -100,7 +100,7 @@ onMounted(() => {
       {
         type: "line",
         data: [10, 20, 30, 40, 50, 33, 66],
-        smooth:true,//曲线平滑
+        smooth: true, //曲线平滑
       },
     ],
     //提示框

@@ -19,32 +19,32 @@ onMounted(() => {
   let myCharts: any = echarts.init(charts.value);
   let option: any = {
     title: {
-      text: '游客消费统计',
+      text: "游客消费统计",
       textStyle: {
-        color: 'white'
-      }
+        color: "white",
+      },
     },
     radar: {
       indicator: [
-        { name: '消费', max: 6500 },
-        { name: '好感度', max: 16000 },
-        { name: '出行', max: 30000 },
-        { name: '小吃', max: 38000 },
-        { name: '爱好', max: 52000 },
-        { name: '景点', max: 25000 },
-      ]
+        { name: "消费", max: 6500 },
+        { name: "好感度", max: 16000 },
+        { name: "出行", max: 30000 },
+        { name: "小吃", max: 38000 },
+        { name: "爱好", max: 52000 },
+        { name: "景点", max: 25000 },
+      ],
     },
     series: [
       {
-        name: '雷达图',
-        type: 'radar',
+        name: "雷达图",
+        type: "radar",
         data: [
-          { value: [4200, 3000, 20000, 35000, 50000, 18000], name: '购物' },
-          { value: [5000, 3000, 20000, 35000, 50000, 18000], name: '吃饭' }
-        ]
-      }
-    ]
-  }
+          { value: [4200, 3000, 20000, 35000, 50000, 18000], name: "购物" },
+          { value: [5000, 3000, 20000, 35000, 50000, 18000], name: "吃饭" },
+        ],
+      },
+    ],
+  };
   myCharts.setOption(option);
 });
 </script>
@@ -54,7 +54,7 @@ export default {
 };
 </script>
 
-<style scoped  lang="scss">
+<style scoped lang="scss">
 .box8 {
   width: 100%;
   height: 100%;
