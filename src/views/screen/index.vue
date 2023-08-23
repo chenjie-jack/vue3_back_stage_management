@@ -12,7 +12,10 @@
           <Sex class="sex" />
           <Age class="age" />
         </div>
-        <div class="center">中间</div>
+        <div class="center">
+          <Map class="map"></Map>
+          <BrokenLine class="line"></BrokenLine>
+        </div>
         <div class="right">右侧</div>
       </div>
     </div>
@@ -27,11 +30,13 @@ import Top from "./components/Top/index.vue";
 import Tourist from "./components/Tourist/index.vue";
 import Sex from "./components/Sex/index.vue";
 import Age from "./components/Age/index.vue";
+//引入中间的两个子组件
+import Map from './components/Map/index.vue'
+import BrokenLine from './components/BrokenLine/index.vue'
 
 //获取数据大屏展示内容盒子的DOM元素
 let screen = ref<any>();
 onMounted(() => {
-  console.log(screen.value);
   screen.value.style.transform = `scale(${getScale()}) translate(-50%,-50%)`;
 });
 //定义大屏的缩放发比例
@@ -94,12 +99,19 @@ export default {
 
         .age {
           flex: 1;
-          background-color: pink;
         }
       }
 
       .center {
         flex: 2;
+        display: flex;
+        flex-direction: column;
+        .map{
+          flex: 4;
+        }
+        .line{
+          flex: 1;
+        }
       }
     }
   }

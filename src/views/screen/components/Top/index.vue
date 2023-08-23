@@ -39,6 +39,11 @@ onBeforeUnmount(() => {
   clearInterval(timer.value);
 });
 </script>
+<script lang="ts">
+export default {
+    name:'Sex'
+}
+</script>
 
 <style scoped lang="scss">
 .top {

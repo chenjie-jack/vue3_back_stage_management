@@ -16,10 +16,77 @@
       <p>男士58%</p>
       <p>女士42%</p>
     </div>
+    <div class="charts" ref="charts"></div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+import * as echarts from "echarts";
+let charts = ref<any>()
+
+onMounted(() => {
+  //初始化echarts实例
+  let myCharts = echarts.init(charts.value)
+  myCharts.setOption({
+    title: {
+      text: '男女比例',//主标题
+      textStyle: {
+        color: 'skyblue',
+
+      },
+      left: '40%'
+    },
+    xAxis: {
+      // type:'category',
+      show: false,
+      min: 0,
+      max: 100
+    },
+    yAxis: {
+      show: false,
+      type: 'category'
+    },
+    series: [
+      {
+        // 男士柱条
+        type: 'bar',
+        data: [58],
+        barWidth: 20,
+        //层叠 默认2
+        z: 3,
+        itemStyle: {
+          color: 'blue',
+          borderRadius: 20
+        }
+      },
+      {
+        type: 'bar',
+        data: [100],
+        barWidth: 20,
+        //调整女士柱条的位置
+        barGap: '-100%',
+        itemStyle: {
+          color: 'pink',
+          borderRadius: 20
+        }
+      }
+    ],
+    grid: {
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0
+    }
+  })
+
+})
+</script>
+<script lang="ts">
+export default {
+    name:'Sex'
+}
+</script>
 
 <style scoped lang="scss">
 .box1 {
@@ -64,10 +131,15 @@
       align-items: center;
     }
   }
+
   .rate {
     display: flex;
     justify-content: space-between;
     color: white;
+  }
+
+  .charts {
+    height: 100px;
   }
 }
 </style>

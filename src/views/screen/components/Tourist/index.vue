@@ -18,7 +18,6 @@ import { ref, onMounted } from "vue";
 import * as echarts from "echarts";
 //水球图拓展插件
 import "echarts-liquidfill";
-console.log(echarts);
 let people = ref<string>("215908人");
 
 //获取DOM节点
@@ -67,6 +66,11 @@ onMounted(() => {
     },
   });
 });
+</script>
+<script lang="ts">
+export default {
+    name:'Tourist'
+}
 </script>
 
 <style scoped lang="scss">

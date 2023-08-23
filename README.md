@@ -1413,7 +1413,7 @@ echarts:国内镜像网站
 
 https://www.isqqw.com/echarts-doc/zh/option.html#title
 
-http://datav.aliyun.com/portal/school/atlas/area_selector
+https://datav.aliyun.com/portal/school/atlas/area_selector
 
 :xs表示屏幕宽度<=768 一份都不占
 
