@@ -31,8 +31,8 @@ import Tourist from "./components/Tourist/index.vue";
 import Sex from "./components/Sex/index.vue";
 import Age from "./components/Age/index.vue";
 //引入中间的两个子组件
-import Map from './components/Map/index.vue'
-import BrokenLine from './components/BrokenLine/index.vue'
+import Map from "./components/Map/index.vue";
+import BrokenLine from "./components/BrokenLine/index.vue";
 
 //获取数据大屏展示内容盒子的DOM元素
 let screen = ref<any>();
@@ -106,10 +106,10 @@ export default {
         flex: 2;
         display: flex;
         flex-direction: column;
-        .map{
+        .map {
           flex: 4;
         }
-        .line{
+        .line {
           flex: 1;
         }
       }

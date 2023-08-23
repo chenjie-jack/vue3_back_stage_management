@@ -69,8 +69,8 @@ onMounted(() => {
 </script>
 <script lang="ts">
 export default {
-    name:'Tourist'
-}
+  name: "Tourist",
+};
 </script>
 
 <style scoped lang="scss">

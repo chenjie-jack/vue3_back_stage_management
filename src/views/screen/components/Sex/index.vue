@@ -21,71 +21,69 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from "vue";
 import * as echarts from "echarts";
-let charts = ref<any>()
+let charts = ref<any>();
 
 onMounted(() => {
   //初始化echarts实例
-  let myCharts = echarts.init(charts.value)
+  let myCharts = echarts.init(charts.value);
   myCharts.setOption({
     title: {
-      text: '男女比例',//主标题
+      text: "男女比例", //主标题
       textStyle: {
-        color: 'skyblue',
-
+        color: "skyblue",
       },
-      left: '40%'
+      left: "40%",
     },
     xAxis: {
       // type:'category',
       show: false,
       min: 0,
-      max: 100
+      max: 100,
     },
     yAxis: {
       show: false,
-      type: 'category'
+      type: "category",
     },
     series: [
       {
         // 男士柱条
-        type: 'bar',
+        type: "bar",
         data: [58],
         barWidth: 20,
         //层叠 默认2
         z: 3,
         itemStyle: {
-          color: 'blue',
-          borderRadius: 20
-        }
+          color: "blue",
+          borderRadius: 20,
+        },
       },
       {
-        type: 'bar',
+        type: "bar",
         data: [100],
         barWidth: 20,
         //调整女士柱条的位置
-        barGap: '-100%',
+        barGap: "-100%",
         itemStyle: {
-          color: 'pink',
-          borderRadius: 20
-        }
-      }
+          color: "pink",
+          borderRadius: 20,
+        },
+      },
     ],
     grid: {
       left: 0,
       right: 0,
       top: 0,
-      bottom: 0
-    }
-  })
-
-})
+      bottom: 0,
+    },
+  });
+});
 </script>
 <script lang="ts">
 export default {
-    name:'Sex'
-}
+  name: "Sex",
+};
 </script>
 
 <style scoped lang="scss">

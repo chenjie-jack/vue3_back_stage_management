@@ -41,8 +41,8 @@ onBeforeUnmount(() => {
 </script>
 <script lang="ts">
 export default {
-    name:'Sex'
-}
+  name: "Sex",
+};
 </script>
 
 <style scoped lang="scss">
