@@ -16,7 +16,11 @@
           <Map class="map"></Map>
           <BrokenLine class="line"></BrokenLine>
         </div>
-        <div class="right">右侧</div>
+        <div class="right">
+          <Rank class="rank"></Rank>
+          <Year class="year"></Year>
+          <Count class="count"></Count>
+        </div>
       </div>
     </div>
   </div>
@@ -33,6 +37,10 @@ import Age from "./components/Age/index.vue";
 //引入中间的两个子组件
 import Map from "./components/Map/index.vue";
 import BrokenLine from "./components/BrokenLine/index.vue";
+//引入右侧三个子组件
+import Rank from './components/Rank/index.vue'
+import Year from './components/Year/index.vue'
+import Count from './components/Count/index.vue'
 
 //获取数据大屏展示内容盒子的DOM元素
 let screen = ref<any>();
@@ -81,6 +89,18 @@ export default {
 
       .right {
         flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        .rank{
+          flex: 1.5;
+        }
+        .year{
+          flex: 1;
+        }
+        .count{
+          flex: 1;
+        }
       }
 
       .left {
@@ -103,11 +123,11 @@ export default {
       }
 
       .center {
-        flex: 2;
+        flex: 1.5;
         display: flex;
         flex-direction: column;
         .map {
-          flex: 4;
+          flex: 3;
         }
         .line {
           flex: 1;
