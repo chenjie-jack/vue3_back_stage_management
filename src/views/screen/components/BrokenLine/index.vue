@@ -1,11 +1,11 @@
 <template>
-    <div class="box5">
-        <div class="title">
-            <p>未来七天游客数量趋势图</p>
-            <img src="../../images/dataScreen-title.png" alt="" />
-        </div>
-        <div class="charts" ref="line"></div>
+  <div class="box5">
+    <div class="title">
+      <p>未来七天游客数量趋势图</p>
+      <img src="../../images/dataScreen-title.png" alt="" />
     </div>
+    <div class="charts" ref="line"></div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -14,86 +14,86 @@ import * as echarts from "echarts";
 let line = ref<any>();
 
 onMounted(() => {
-    let myCharts = echarts.init(line.value);
-    myCharts.setOption({
-        title: {
-            text: "访问量",
+  let myCharts = echarts.init(line.value);
+  myCharts.setOption({
+    title: {
+      text: "访问量",
+    },
+    xAxis: {
+      type: "category",
+      //x轴两边不留白
+      boundaryGap: false,
+      //分割线
+      splitLine: {
+        show: false,
+      },
+      data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+      axisLine: {
+        show: true,
+      },
+      axisTick: {
+        show: true,
+      },
+    },
+    yAxis: {
+      splitLine: {
+        show: false,
+      },
+      //轴线
+      axisLine: {
+        show: true,
+      },
+      //轴线的刻度
+      axisTick: {
+        show: true,
+      },
+    },
+    grid: {
+      top: 0,
+      left: 40,
+      bottom: 20,
+      right: 20,
+    },
+    series: [
+      {
+        type: "line",
+        data: [120, 240, 66, 99, 321, 890, 1200],
+        //平滑曲线的设置
+        smooth: true,
+        //区域填充样式
+        areaStyle: {
+          color: "blue", //也支持渐变
         },
-        xAxis: {
-            type: "category",
-            //x轴两边不留白
-            boundaryGap: false,
-            //分割线
-            splitLine: {
-                show: false
-            },
-            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
-            axisLine:{
-                show:true
-            },
-            axisTick:{
-                show:true
-            }
-        },
-        yAxis: {
-            splitLine: {
-                show: false
-            },
-            //轴线
-            axisLine:{
-                show:true
-            },
-            //轴线的刻度
-            axisTick:{
-                show:true
-            }
-        },
-        grid: {
-            top: 0,
-            left: 40,
-            bottom: 20,
-            right: 20,
-        },
-        series: [
-            {
-                type: "line",
-                data: [120, 240, 66, 99, 321, 890, 1200],
-                //平滑曲线的设置
-                smooth: true,
-                //区域填充样式
-                areaStyle: {
-                    color: "blue", //也支持渐变
-                },
-            },
-        ],
-    });
+      },
+    ],
+  });
 });
 </script>
 <script lang="ts">
 export default {
-    name: "BrokenLine",
+  name: "BrokenLine",
 };
 </script>
 
 <style scoped lang="scss">
 .box5 {
-    width: 100%;
-    height: 100%;
-    background: url(../../images/dataScreen-main-cb.png) no-repeat;
-    background-size: 100% 100%;
-    margin: 0 20px;
+  width: 100%;
+  height: 100%;
+  background: url(../../images/dataScreen-main-cb.png) no-repeat;
+  background-size: 100% 100%;
+  margin: 0 20px;
 
-    .title {
-        margin-left: 10px;
+  .title {
+    margin-left: 10px;
 
-        p {
-            color: white;
-            font-size: 20px;
-        }
+    p {
+      color: white;
+      font-size: 20px;
     }
+  }
 
-    .charts {
-        height: calc(100% - 40px);
-    }
+  .charts {
+    height: calc(100% - 40px);
+  }
 }
 </style>

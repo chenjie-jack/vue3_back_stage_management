@@ -38,9 +38,9 @@ import Age from "./components/Age/index.vue";
 import Map from "./components/Map/index.vue";
 import BrokenLine from "./components/BrokenLine/index.vue";
 //引入右侧三个子组件
-import Rank from './components/Rank/index.vue'
-import Year from './components/Year/index.vue'
-import Count from './components/Count/index.vue'
+import Rank from "./components/Rank/index.vue";
+import Year from "./components/Year/index.vue";
+import Count from "./components/Count/index.vue";
 
 //获取数据大屏展示内容盒子的DOM元素
 let screen = ref<any>();
@@ -92,13 +92,13 @@ export default {
         display: flex;
         flex-direction: column;
         margin-left: 20px;
-        .rank{
+        .rank {
           flex: 1.5;
         }
-        .year{
+        .year {
           flex: 1;
         }
-        .count{
+        .count {
           flex: 1;
         }
       }
