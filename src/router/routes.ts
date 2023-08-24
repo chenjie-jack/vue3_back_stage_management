@@ -154,5 +154,5 @@ export const constantRoute: Array<RouteRecordRaw> = [
       hidden: true,
       icon: "DataLine",
     },
-  }
+  },
 ];

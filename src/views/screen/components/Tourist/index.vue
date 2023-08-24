@@ -14,8 +14,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
 import * as echarts from "echarts";
+import { ref, onMounted } from "vue";
+
 //水球图拓展插件
 import "echarts-liquidfill";
 let people = ref<string>("215908人");
