@@ -9,7 +9,7 @@ import { onMounted, ref } from "vue";
 import chinaJSON from "./china.json";
 let map = ref<any>();
 //注册中国地图
-echarts.registerMap("china", chinaJSON);
+echarts.registerMap("china", chinaJSON as any);
 onMounted(() => {
   //初始化
   let myCharts = echarts.init(map.value);

@@ -15,8 +15,21 @@ import type { UserState } from "./types/types";
 //引入操作本地存储的工具ff
 import { SET_TOKEN, GET_TOKEN, REMOVE_TOKEN } from "@/utils/token";
 
-//引入路由(常量路由)
+//引入路由(常量路由)/异步路由/任意路由
 import { constantRoute } from "@/router/routes";
+// import router from "@/router";
+
+//用于过滤当前用户需要展示的异步路由
+// function filterAsyncRoute(asyncRoute: any, routes: any) {
+//   return asyncRoute.filter((item: any) => {
+//     if (routes.includes(item.name)) {
+//       if (item.children && item.children.length > 0) {
+//         item.children = filterAsyncRoute(item.children, routes)
+//       }
+//       return true
+//     }
+//   })
+// }
 
 //创建用户小仓库
 const useUserStore = defineStore("User", {
@@ -35,6 +48,7 @@ const useUserStore = defineStore("User", {
     //处理用户登录的方法
     async userLogin(data: LoginFormData) {
       const result: LoginResponseData = await reqLogin(data);
+
       if (result.code == 200) {
         //pinia仓库存储一下token
         this.token = result.data as string; //类型断言 保证result.data.token是字符串型
@@ -55,6 +69,13 @@ const useUserStore = defineStore("User", {
       if (result.code == 200) {
         this.username = result.data.name;
         this.avatar = result.data.avatar;
+        //计算当前用户需要展示的异步路由
+        // const userAsyncRoute: any = filterAsyncRoute(asyncRoute, result.data.rotues)
+        // //菜单的数据
+        // this.menuRoutes=[...constantRoute,...userAsyncRoute,anyRoute];
+        // [...userAsyncRoute,anyRoute].forEach((route:any)=>{
+        //   router.addRoute(route)
+        // })
         return "ok";
       } else {
         return Promise.reject(new Error(result.message));

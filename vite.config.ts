@@ -7,7 +7,7 @@ import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 //mock插件提供的方法
 import { viteMockServe } from "vite-plugin-mock";
 
-// https://vitejs.dev/config/
+// https://cn.vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   //获取各种环境下的对应变量
   const env = loadEnv(mode, process.cwd());

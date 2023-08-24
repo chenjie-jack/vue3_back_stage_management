@@ -1441,3 +1441,15 @@ C:\Users\32325\Desktop\learn-vue\learn_vue3\vue3_admin_template\src\layout\index
 1.控制台报错：Not allowed to load local resource: blob:http://localhost:5173/0625fd6e-6874-482c-b726-5289ed34985d
 
 ## 答：Chrome浏览器出于安全方面的考虑，禁止网页访问本地文件。本人遇到的问题：使用img标签将本地磁盘的文件展示在页面。
+
+## 菜单权限：
+# 超级管理员账号：admin atguigu123 拥有全部菜单与按钮的权限
+# 飞行员账号：硅谷333 111111  全部菜单中不包含权限管理模块、按钮的权限不并非全部都拥有
+
+## 静态(常量)路由:大家都可以拥有的路由
+
+## 异步路由:不同的身份有的有这个路由、有的没有
+权限管理(三个子路由)
+商品管理模块(四个子路由)
+
+## 任意路由:任意路由

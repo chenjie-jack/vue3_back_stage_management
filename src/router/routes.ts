@@ -56,24 +56,23 @@ export const constantRoute: Array<RouteRecordRaw> = [
       icon: "Platform",
     },
   },
+
   {
     path: "/acl",
     component: () => import("@/layout/index.vue"),
     name: "Acl",
-    redirect: "/acl/user",
     meta: {
       title: "权限管理",
-      hidden: false,
       icon: "Lock",
     },
+    redirect: "/acl/user",
     children: [
       {
         path: "/acl/user",
         component: () => import("@/views/acl/user/index.vue"),
-        name: "Acl",
+        name: "User",
         meta: {
           title: "用户管理",
-          hidden: false,
           icon: "User",
         },
       },
@@ -83,7 +82,6 @@ export const constantRoute: Array<RouteRecordRaw> = [
         name: "Role",
         meta: {
           title: "角色管理",
-          hidden: false,
           icon: "UserFilled",
         },
       },
@@ -93,7 +91,6 @@ export const constantRoute: Array<RouteRecordRaw> = [
         name: "Permission",
         meta: {
           title: "菜单管理",
-          hidden: false,
           icon: "Monitor",
         },
       },
@@ -103,12 +100,11 @@ export const constantRoute: Array<RouteRecordRaw> = [
     path: "/product",
     component: () => import("@/layout/index.vue"),
     name: "Product",
-    redirect: "/product/trademark",
     meta: {
       title: "商品管理",
       icon: "Goods",
-      hidden: false,
     },
+    redirect: "/product/trademark",
     children: [
       {
         path: "/product/trademark",
@@ -158,5 +154,5 @@ export const constantRoute: Array<RouteRecordRaw> = [
       hidden: true,
       icon: "DataLine",
     },
-  },
+  }
 ];
